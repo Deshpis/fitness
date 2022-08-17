@@ -1,0 +1,33 @@
+a.tabs__trigger--active {
+  position: relative;
+  color: $color-sapphire;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    bottom: -13px;
+    left: 0;
+    background-color: $color-crimson;
+  }
+}
+
+.tabs__content {
+  display: none;
+}
+
+.tabs__content--active {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  @include vp-1199 {
+    grid-template-columns: 442px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}

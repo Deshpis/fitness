@@ -1,0 +1,57 @@
+.video {
+  background-color: $color-default-black;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color-dark-cerulean, 0.5);
+    pointer-events: none;
+  }
+
+  &--enabled::after {
+    display: none;
+  }
+}
+
+.video__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+}
+
+.video__button {
+  position: absolute;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  background-image: url("../img/svg/video-play.svg");
+  border: none;
+  z-index: 2;
+  cursor: pointer;
+  transition: opacity $trans-default;
+  background-size: contain;
+
+  @include vp-1199 {
+    width: 73px;
+    height: 73px;
+  }
+}
+
+@media (hover: hover), screen and (min-width: 0\0) {
+  .video:hover .video__button,
+  .video__button:focus {
+    opacity: 0.8;
+  }
+}

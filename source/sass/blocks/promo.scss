@@ -1,0 +1,239 @@
+.promo {
+  margin: 0 auto;
+  margin-bottom: 120px;
+  padding: 0 103px;
+  display: flex;
+  max-width: $vp-1200;
+
+  @media (min-width: $vp-1366) {
+    padding: 0 20px;
+  }
+
+  @include vp-1199 {
+    margin-bottom: 100px;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-direction: column;
+  }
+}
+
+.promo__info {
+  padding: 84px 78px;
+  padding-top: 83px;
+  width: 500px;
+  display: grid;
+  grid-template-areas:
+    "header date"
+    "header date"
+    "description description"
+    "button button";
+  color: $color-default-white;
+  justify-content: space-between;
+  background-color: $color-torch-red;
+  flex-shrink: 0;
+
+  @include vp-1199 {
+    padding: 50px 45px;
+    padding-top: 47px;
+    min-width: 292px;
+    max-width: 43%;
+  }
+
+  @include vp-767 {
+    min-width: 290px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.promo__info h2 {
+  grid-area: header;
+  margin: 0;
+  margin-bottom: 9px;
+  margin-right: 22px;
+  width: 230px;
+  font-family: $ff-bebas-neue;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 90px;
+  letter-spacing: 0.03em;
+  word-wrap: break-word;
+
+  @include vp-1199 {
+    box-sizing: border-box;
+    margin-top: 2px;
+    margin-bottom: 0;
+    font-size: 52px;
+    line-height: 52px;
+    width: 100%;
+  }
+}
+
+.promo__info p {
+  grid-area: description;
+  margin: 0;
+  margin-bottom: 45px;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include vp-1199 {
+    margin-bottom: 30px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.promo__date-wrapper {
+  grid-area: date;
+
+  @include vp-1199 {
+    width: 55px;
+  }
+}
+
+.promo__date {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+
+  @include vp-1199 {
+    margin-bottom: 6px;
+  }
+}
+
+.promo__date-inner {
+  padding-top: 3px;
+  display: grid;
+  width: fit-content;
+  max-width: 100%;
+  grid-template-columns: repeat(2, min-content);
+  column-gap: 6px;
+  grid-template-areas:
+    "number month"
+    "number year";
+  font-size: 14px;
+  line-height: 21px;
+  border-top: 1px solid $color-default-white;
+
+  @include vp-1199 {
+    column-gap: 3px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+.promo__date-header {
+  margin-bottom: 2px;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include vp-1199 {
+    margin-bottom: 1px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.promo__date-number {
+  grid-area: number;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+
+  @include vp-1199 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.promo__date-month {
+  grid-area: month;
+}
+
+.promo__date-year {
+  grid-area: year;
+}
+
+.promo__time {
+  grid-area: time;
+  display: flex;
+  flex-direction: column;
+}
+
+.promo__time-header {
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include vp-1199 {
+    margin-bottom: 1px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.promo__time-time {
+  padding-top: 3px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  border-top: 1px solid $color-default-white;
+
+  @include vp-1199 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.promo__btn {
+  grid-area: button;
+  margin: 0;
+  padding: 25px;
+  width: 344px;
+
+  @include vp-1199 {
+    padding: 12px;
+    font-size: 10px;
+    line-height: 12px;
+    width: 100%;
+    border-width: 2px;
+  }
+}
+
+.promo__image {
+  width: 100%;
+  background-color: $color-torea-bay;
+  background-image: url("../../img/decorative/promo-decorative.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @supports (background-image: url("../../img/decorative/promo-decorative.webp")) {
+    background-image: url("../../img/decorative/promo-decorative.webp");
+  }
+
+  @include retina {
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/decorative/promo-decorative@2x.jpg");
+    }
+
+    @supports (background-image: url("../../img/decorative/promo-decorative@2x.webp")) {
+      background-image: url("../../img/decorative/promo-decorative@2x.webp");
+    }
+  }
+
+  @include vp-1199 {
+    max-width: 57%;
+  }
+
+  @include vp-767 {
+    max-width: 100%;
+    min-height: 292px;
+  }
+}

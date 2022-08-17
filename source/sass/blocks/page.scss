@@ -1,0 +1,25 @@
+.page {
+  min-height: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fz-default;
+  line-height: $lh-default;
+  font-family: $ff-roboto-condensed;
+  scroll-behavior: smooth;
+  flex-grow: 1;
+}
+
+.page__body {
+  margin: 0 auto;
+  min-width: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: $color-sapphire;
+  background-color: $color-default-white;
+}
+
+.page__main {
+  flex-grow: 1;
+}

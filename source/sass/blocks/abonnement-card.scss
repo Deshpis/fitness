@@ -1,0 +1,134 @@
+.abonnement-card {
+  padding: 54px 10%;
+  padding-bottom: 60px;
+  width: 100%;
+  height: 448px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 7px solid $color-default-white;
+  background-color: $color-default-white;
+
+  @media (min-width: $vp-1366) {
+    padding: 54px 71px;
+  }
+
+  @include vp-1199 {
+    padding: 60px 112px;
+  }
+
+  @include vp-767 {
+    padding-top: 42px;
+    padding-right: 35px;
+    padding-bottom: 47px;
+    padding-left: 35px;
+    height: 384px;
+  }
+}
+
+@media (hover: hover), screen and (min-width: 0\0) {
+  .abonnement-card:hover,
+  .abonnement-card:focus {
+    border: 7px solid transparent;
+    border-image: linear-gradient(127.61deg, $color-crimson 0%, $color-cobalt 45.58%);
+    border-image-slice: 1;
+  }
+
+  .abonnement-card:hover .abonnement-card__btn {
+    outline: none;
+    color: $color-default-white;
+    background: linear-gradient(97.05deg, $color-torch-red 17.6%, $color-cobalt 95.31%);
+  }
+}
+
+.abonnement-card h3 {
+  margin: 0;
+  margin-bottom: 11px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 29px;
+  text-align: center;
+
+  @include vp-1199 {
+    line-height: 29px;
+  }
+
+  @include vp-767 {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+.abonnement-card__quantity {
+  margin-bottom: 57px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  @include vp-767 {
+    margin-bottom: 46px;
+  }
+}
+
+.abonnement-card__price {
+  position: relative;
+  width: 100%;
+  margin-bottom: 35px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 90px;
+  color: $color-egyptian-blue;
+  text-align: center;
+  z-index: 1;
+
+  &::before {
+    position: absolute;
+    content: attr(data-shadow);
+    top: -47px;
+    left: 50%;
+    transform: translate(-50%);
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 150px;
+    align-items: center;
+    color: $color-whisper;
+    opacity: 0.48;
+    z-index: -1;
+
+    @include vp-767 {
+      top: -39px;
+      font-size: 80px;
+      line-height: 120px;
+    }
+  }
+
+  @include vp-767 {
+    margin-bottom: 32px;
+    font-size: 48px;
+    line-height: 72px;
+  }
+}
+
+.abonnement-card__font-rouble {
+  font-family: $ff-rouble;
+  font-weight: 600;
+  color: $color-sapphire;
+  text-shadow: none;
+}
+
+.abonnement-card__btn {
+  margin: 0;
+  padding: 25px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  border: none;
+  color: $color-sapphire;
+  outline: 2px solid $color-sapphire;
+
+  &:focus {
+    outline-width: 4px;
+  }
+}

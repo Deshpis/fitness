@@ -1,0 +1,160 @@
+.gym {
+  position: relative;
+  margin: 0 auto;
+  padding: 120px 103px;
+  padding-bottom: 228px;
+  max-width: $vp-1200;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  color: $color-sapphire;
+
+  @media (min-width: $vp-1366) {
+    padding: 120px 20px;
+    padding-bottom: 228px;
+  }
+
+  @include vp-1199 {
+    padding: 100px 45px;
+    padding-bottom: 183px;
+    flex-direction: column;
+  }
+
+  @include vp-767 {
+    padding: 0;
+    padding-top: 69px;
+    padding-bottom: 70px;
+  }
+}
+
+.gym__description-wrapper {
+  padding: 49px 60px;
+  padding-bottom: 38px;
+  width: 480px;
+  flex-shrink: 0;
+
+  @include vp-1199 {
+    margin: 0 auto;
+    margin-bottom: 33px;
+    padding: 0;
+    width: 75%;
+    text-align: center;
+  }
+
+  @include vp-767 {
+    margin-bottom: 25px;
+    padding-right: 14px;
+    padding-left: 14px;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.gym__description-wrapper h2 {
+  margin: 0;
+  margin-bottom: 6px;
+  font-family: $ff-bebas-neue;
+  font-weight: 700;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+
+  @include vp-1199 {
+    margin-bottom: 9px;
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 7px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.gym__description-wrapper span {
+  margin-bottom: 39px;
+  display: block;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include vp-1199 {
+    margin-bottom: 34px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 23px;
+  }
+}
+
+.gym__description-wrapper p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  @include vp-767 {
+    width: 90%;
+  }
+}
+
+.gym__image {
+  width: 660px;
+  height: 401px;
+  object-fit: cover;
+
+  @include vp-1199 {
+    width: 100%;
+    min-height: 345px;
+    height: auto;
+    aspect-ratio: 1 / 0.5;
+  }
+
+  @include vp-767 {
+    margin-bottom: 40px;
+    min-height: 313px;
+    aspect-ratio: 1 / 0.9;
+  }
+}
+
+.gym__only-desktop-visible {
+  @include vp-1199 {
+    display: none;
+  }
+}
+
+.gym__video {
+  position: absolute;
+  bottom: 120px;
+  left: 535px;
+
+  width: 364px;
+  height: 228px;
+
+  @media (min-width: $vp-1366) {
+    left: 457px;
+  }
+
+  @include vp-1199 {
+    width: 35%;
+    min-height: 167px;
+    height: auto;
+    aspect-ratio: 1 / 0.6;
+    bottom: 99px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  @include vp-767 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    aspect-ratio: 1 / 0.5;
+  }
+}

@@ -1,0 +1,26 @@
+.advantages {
+  color: $color-sapphire;
+  background-color: $color-ghost-white;
+}
+
+.advantages__wrapper {
+  margin: 0 auto;
+  padding: 120px 103px;
+  padding-top: 118px;
+  max-width: $vp-1200;
+
+  @media (min-width: $vp-1366) {
+    padding: 120px 20px;
+    padding-top: 118px;
+  }
+}
+
+.advantages h2 {
+  margin: 0;
+  margin-bottom: 50px;
+  font-family: $ff-bebas-neue;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.03em;
+  text-align: center;
+}

@@ -1,0 +1,128 @@
+.coach {
+  position: relative;
+  cursor: pointer;
+}
+
+.coach:hover h3 {
+  opacity: 0;
+}
+
+.coach:hover .coach__description {
+  opacity: 1;
+}
+
+.coach h3 {
+  position: absolute;
+  margin: 0;
+  padding: 22px;
+  bottom: 0;
+  width: 100%;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  color: $color-default-white;
+  opacity: 1;
+  transition: opacity $trans-default;
+}
+
+.coach img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coach__description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20% 10%;
+  width: 100%;
+  height: 100%;
+  color: $color-default-white;
+  background-color: rgba($color-sapphire, 0.89);
+  opacity: 0;
+  transition: opacity $trans-default;
+
+  @media (min-width: $vp-1366) {
+    padding: 52px 46px;
+  }
+
+  @include vp-1199 {
+    padding: 52px 28px 50px 20px;
+  }
+
+  @include vp-767 {
+    padding: 43px 20px 40px 20px;
+  }
+}
+
+.coach__description p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+}
+
+.coach__description span {
+  margin-top: -3px;
+  margin-bottom: 32px;
+  display: block;
+  color: $color-spindle;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.coach__description ul {
+  margin: 0;
+  padding-left: 25px;
+  font-size: 14px;
+  line-height: 21px;
+  list-style: none;
+  overflow: auto;
+
+  @include vp-1199 {
+    padding-left: 51px;
+  }
+
+  @include vp-767 {
+    padding-left: 30px;
+  }
+}
+
+.coach__description ul::-webkit-scrollbar {
+  width: 2px;
+  background-color: rgba($color-whisper, 0.5);
+  border-radius: 2px;
+}
+
+.coach__description ul::-webkit-scrollbar-button,
+.coach__description ul::-webkit-scrollbar-track {
+  display: none;
+}
+
+.coach__description ul::-webkit-scrollbar-thumb {
+  background-color: $color-default-white;
+  border-radius: 2px;
+}
+
+.coach__description li {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 13px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: -16px;
+    width: 6px;
+    height: 6px;
+    background-color: $color-default-white;
+    border-radius: 50%;
+  }
+}

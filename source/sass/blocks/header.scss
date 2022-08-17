@@ -1,0 +1,291 @@
+.header {
+  color: $color-default-white;
+  background: $header-gradient;
+}
+
+.header__wrapper {
+  margin: 0 auto;
+  padding: 30px 103px;
+  padding-bottom: 51px;
+  display: flex;
+  flex-direction: column;
+  max-width: $vp-1200;
+
+  @media (min-width: $vp-1366) {
+    padding: 30px 20px;
+    padding-bottom: 51px;
+  }
+
+  @include vp-1199 {
+    padding: 39px 45px;
+    padding-bottom: 62px;
+  }
+
+  @include vp-767 {
+    padding: 20px 15px;
+    padding-bottom: 78px;
+  }
+}
+
+.header__top-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include vp-1199 {
+    margin-bottom: 19px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 69px;
+  }
+}
+
+.header a {
+  &[href] {
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.header__top-row a {
+  font-family: $ff-bebas-neue;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: $color-default-white;
+  text-transform: uppercase;
+  transition: opacity $trans-default;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &[href^="tel"] {
+    letter-spacing: 0.03em;
+  }
+
+  @include vp-1199 {
+    font-size: 24px;
+    line-height: 24px;
+
+    &[href^="tel"] {
+      letter-spacing: 0.02em;
+    }
+  }
+
+  @include vp-767 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.header__bottom-row {
+  display: flex;
+  justify-content: center;
+}
+
+.header__left-column {
+  padding-top: 106px;
+  padding-right: 63px;
+  padding-bottom: 43px;
+  padding-left: 20px;
+  min-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-transform: uppercase;
+
+  @include vp-1199 {
+    padding-top: 50px;
+    padding-right: 30px;
+    min-width: 354px;
+  }
+
+  @include vp-767 {
+    padding: 0;
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+.header__location {
+  margin-bottom: 8px;
+  display: block;
+  font-family: $ff-bebas-neue;
+  font-weight: 400;
+  font-size: 49px;
+  line-height: 59px;
+  letter-spacing: 0.03em;
+  text-align: right;
+
+  @include vp-1199 {
+    margin-bottom: 0;
+    font-size: 34px;
+    line-height: 41px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 9px;
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.header__main-header {
+  position: relative;
+  margin: 0;
+  font-family: $ff-bebas-neue;
+  font-weight: 700;
+  font-size: 109px;
+  line-height: 109px;
+  letter-spacing: 0.03em;
+  text-align: right;
+  width: 235px;
+  word-wrap: break-word;
+
+  @include vp-1199 {
+    width: 185px;
+    font-size: 86px;
+    line-height: 86px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    font-size: 85px;
+    line-height: 78px;
+    letter-spacing: 0;
+  }
+}
+
+.header__text-displaced {
+  position: relative;
+  left: -65px;
+  white-space: nowrap;
+
+  @include vp-1199 {
+    left: -50px;
+  }
+
+  @include vp-767 {
+    left: 0;
+  }
+}
+
+.header__description {
+  position: absolute;
+  left: -143px;
+  top: 194px;
+  text-align: right;
+  font-size: 14px;
+  line-height: 21px;
+  width: 113px;
+
+  @include vp-1199 {
+    left: -139px;
+    top: 137px;
+  }
+
+  @include vp-767 {
+    left: -1px;
+    top: 124px;
+  }
+}
+
+.header__description p {
+  margin: 0;
+  text-transform: none;
+}
+
+.header__abonnements-btn {
+  margin: 0;
+  padding: 20px 50px;
+  width: 234px;
+
+  @include vp-1199 {
+    padding: 20px 25px;
+    width: 185px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.header__right-column {
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-1199 {
+    width: 324px;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.header__main-image {
+  margin: 0;
+  margin-top: -5px;
+  width: 500px;
+  height: 556px;
+  object-fit: cover;
+
+  @include vp-1199 {
+    margin: 0;
+    width: 324px;
+    height: 390px;
+  }
+}
+
+.header__social-list {
+  margin: 0;
+  margin-bottom: 39px;
+  padding: 0;
+  align-self: flex-end;
+  max-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  list-style: none;
+
+  @include vp-1199 {
+    display: none;
+  }
+}
+
+.header__social-list li {
+  &:not(:last-child) {
+    margin-bottom: 11px;
+  }
+}
+
+.header__social-list a {
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  text-transform: uppercase;
+  color: $color-default-white;
+}
+
+.header__description-centerer {
+  position: relative;
+  margin-bottom: 55px;
+
+  @include vp-1199 {
+    margin-bottom: 42px;
+  }
+
+  @include vp-767 {
+    margin: 0 auto;
+    margin-bottom: 43px;
+    width: 290px;
+  }
+}

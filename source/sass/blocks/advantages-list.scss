@@ -1,0 +1,133 @@
+.advantages-list {
+  margin: 0 auto;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 341px 240px 335px;
+  grid-template-rows: repeat(auto-fill, auto);
+  column-gap: 35px;
+
+  @media (min-width: $vp-1366) {
+    column-gap: 60px;
+  }
+}
+
+.advantages-list__item {
+  position: relative;
+  margin-bottom: 115px;
+  padding: 18px 0;
+  padding-top: 13px;
+  display: flex;
+  align-items: flex-start;
+  grid-auto-flow: dense;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -55px;
+    background-color: rgba($color-crimson, 0.2);
+  }
+
+  &--center {
+    margin: 7px 0;
+
+    grid-column: 2;
+    // Это не работет
+    // grid-row: 1 / -1;
+    // А это работает, но если добавятся ещё элементы - то не работает.
+    grid-row: 3 / -1;
+
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &:nth-last-child(1),
+  &:nth-last-child(2) {
+    margin: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &:nth-child(2n) {
+    padding-left: 20px;
+  }
+
+  &:nth-child(2) {
+    padding-left: 27px;
+  }
+}
+
+.advantages-list__quantity {
+  order: -1;
+  margin-right: 30px;
+  width: fit-content;
+  max-width: 108px;
+  word-wrap: break-word;
+}
+
+.advantages-list h3 {
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.advantages-list p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.advantages-list__count {
+  font-weight: 700;
+  font-size: 71px;
+  line-height: 65px;
+  color: transparent;
+  background: linear-gradient(127.61deg, $color-crimson 0%, $color-cobalt 45.58%);
+  background-clip: text;
+}
+
+.advantages-list__name {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.advantages-list__item-wrapper {
+  padding: 57px 34px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: $color-default-white;
+  background-color: $color-resolution-blue;
+}
+
+.advantages-list__item--center .advantages-list__quantity {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advantages-list__item--center .advantages-list__count {
+  margin-bottom: 8px;
+  padding-right: 10px;
+  background: none;
+  color: $color-default-white;
+}
+
+.advantages-list__item--center .advantages-list__name {
+  margin-bottom: 34px;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 39px;
+}
