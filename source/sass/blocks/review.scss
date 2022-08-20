@@ -1,0 +1,71 @@
+.review {
+  position: relative;
+  padding: 54px 62px;
+  padding-bottom: 56px;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  column-gap: 28px;
+  row-gap: 14px;
+  color: $color-default-white;
+  background-color: $color-resolution-blue;
+  box-shadow: 0 0 40px rgba($color-resolution-blue, 0.2);
+
+  @include vp-767 {
+    padding: 38px 25px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
+    row-gap: 19px;
+  }
+}
+
+.review__author-image {
+  position: absolute;
+  grid-column: 1;
+  grid-row: 1 / -1;
+  top: 8px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  @include vp-767 {
+    width: 68px;
+    height: 68px;
+    top: 3px;
+    right: 58%;
+  }
+}
+
+.review cite {
+  grid-column: 2;
+  grid-row: 1;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  overflow-wrap: anywhere;
+
+  @include vp-767 {
+    position: relative;
+    top: 2px;
+    left: 2px;
+    display: flex;
+    align-items: center;
+    min-height: 68px;
+    padding-left: 6px;
+    line-height: 26px;
+  }
+}
+
+.review blockquote {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+
+  @include vp-767 {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}

@@ -1,17 +1,32 @@
 .advantages {
+  margin-bottom: 120px;
   color: $color-sapphire;
   background-color: $color-ghost-white;
+
+  @include vp-1199 {
+    margin-bottom: 99px;
+  }
 }
 
 .advantages__wrapper {
   margin: 0 auto;
-  padding: 120px 103px;
+  padding: 95px 103px;
   padding-top: 118px;
   max-width: $vp-1200;
 
   @media (min-width: $vp-1366) {
-    padding: 120px 20px;
-    padding-top: 118px;
+    padding: 118px 20px;
+    padding-bottom: 95px;
+  }
+
+  @include vp-1199 {
+    padding: 99px 45px;
+    padding-bottom: 74px;
+  }
+
+  @include vp-767 {
+    padding: 0;
+    padding-top: 70px;
   }
 }
 
@@ -23,4 +38,16 @@
   line-height: 49px;
   letter-spacing: 0.03em;
   text-align: center;
+
+  @include vp-1199 {
+    margin-bottom: 30px;
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 45px;
+    font-size: 32px;
+    line-height: 32px;
+  }
 }

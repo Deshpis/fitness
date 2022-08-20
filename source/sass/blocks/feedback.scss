@@ -1,0 +1,61 @@
+.feedback {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color-sapphire;
+    z-index: 1;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-top: 1px solid $color-light-slate-grey;
+    z-index: 1;
+  }
+
+  @include vp-1199 {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.feedback__wrapper {
+  margin: 0 auto;
+  padding: 0 103px;
+  max-width: $vp-1200;
+  display: flex;
+  flex-wrap: nowrap;
+
+  @media (min-width: $vp-1366) {
+    padding: 0 20px;
+  }
+
+  @include vp-1199 {
+    padding: 0;
+    flex-direction: column;
+  }
+}
+
+.feedback__lesson,
+.feedback__contacts {
+  width: 50%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  z-index: 2;
+
+  @include vp-1199 {
+    width: 100%;
+  }
+}

@@ -106,6 +106,7 @@
   width: 660px;
   height: 401px;
   object-fit: cover;
+  background-color: $color-echo-blue;
 
   @include vp-1199 {
     width: 100%;

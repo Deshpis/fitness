@@ -24,7 +24,7 @@
 
 
   @include vp-1199 {
-    margin-bottom: -15px;
+    margin-bottom: -18px;
   }
 
   @include vp-767 {
@@ -45,24 +45,24 @@
     width: 470px;
     height: 494px;
     right: -266px;
-    bottom: -152px;
-    background-image: url("../../img/decorative/abonnements-decorative.png");
+    bottom: -148px;
+    background-image: url("../img/decorative/abonnements-decorative.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     z-index: 1;
 
-    @supports (background-image: url("../../img/decorative/abonnements-decorative.webp")) {
-      background-image: url("../../img/decorative/abonnements-decorative.webp");
+    @supports (background-image: url("../img/decorative/abonnements-decorative.webp")) {
+      background-image: url("../img/decorative/abonnements-decorative.webp");
     }
 
     @include retina {
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-        background-image: url("../../img/decorative/abonnements-decorative@2x.png");
+        background-image: url("../img/decorative/abonnements-decorative@2x.png");
       }
 
-      @supports (background-image: url("../../img/decorative/abonnements-decorative@2x.webp")) {
-        background-image: url("../../img/decorative/abonnements-decorative@2x.webp");
+      @supports (background-image: url("../img/decorative/abonnements-decorative@2x.webp")) {
+        background-image: url("../img/decorative/abonnements-decorative@2x.webp");
       }
     }
 
@@ -70,7 +70,7 @@
       width: 423px;
       height: 444px;
       right: -76px;
-      bottom: -128px;
+      bottom: -126px;
     }
 
     @include vp-767 {

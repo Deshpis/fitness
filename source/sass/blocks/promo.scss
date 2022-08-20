@@ -209,22 +209,22 @@
 .promo__image {
   width: 100%;
   background-color: $color-torea-bay;
-  background-image: url("../../img/decorative/promo-decorative.jpg");
+  background-image: url("../img/decorative/promo-decorative.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
-  @supports (background-image: url("../../img/decorative/promo-decorative.webp")) {
-    background-image: url("../../img/decorative/promo-decorative.webp");
+  @supports (background-image: url("../img/decorative/promo-decorative.webp")) {
+    background-image: url("../img/decorative/promo-decorative.webp");
   }
 
   @include retina {
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/decorative/promo-decorative@2x.jpg");
+      background-image: url("../img/decorative/promo-decorative@2x.jpg");
     }
 
-    @supports (background-image: url("../../img/decorative/promo-decorative@2x.webp")) {
-      background-image: url("../../img/decorative/promo-decorative@2x.webp");
+    @supports (background-image: url("../img/decorative/promo-decorative@2x.webp")) {
+      background-image: url("../img/decorative/promo-decorative@2x.webp");
     }
   }
 

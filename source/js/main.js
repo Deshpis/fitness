@@ -88,6 +88,86 @@ window.addEventListener('DOMContentLoaded', () => {
     firstTab.click();
   }
 
+  // Маска для телефона
+  const inputPhone = document.querySelectorAll('[data-input="phone"]');
+
+  if (inputPhone) {
+    [].forEach.call(inputPhone, function (input) {
+      let keyCode;
+      function mask(event) {
+        let pos = input.selectionStart;
+        if (pos < 3) {
+          event.preventDefault();
+        }
+        let matrix = '+7(___)___-__-__';
+        let i = 0;
+        let def = matrix.replace(/\D/g, '');
+        let val = input.value.replace(/\D/g, '');
+        let newValue = matrix.replace(/[_\d]/g, function (a) {
+          return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
+        });
+        i = newValue.indexOf('_');
+        if (i !== -1) {
+          newValue = newValue.slice(0, i);
+        }
+        let reg = matrix.substr(0, input.value.length).replace(/_+/g,
+            function (a) {
+              return '\\d{1,' + a.length + '}';
+            }).replace(/[+()]/g, '\\$&');
+        reg = new RegExp('^' + reg + '$');
+        if (!reg.test(input.value) || input.value.length < 5 || keyCode > 47 && keyCode < 58) {
+          input.value = newValue;
+        }
+        if (event.type === 'blur' && input.value.length < 5) {
+          input.value = '';
+        }
+      }
+      input.addEventListener('input', mask, false);
+      input.addEventListener('focus', mask, false);
+      input.addEventListener('blur', mask, false);
+      input.addEventListener('keydown', mask, false);
+    });
+  }
+
+  // Сохранение формы в localstorage
+
+  const lessonForm = document.querySelector('[data-form="free-lesson"]');
+
+  if (lessonForm) {
+    const feedbackName = document.querySelector('[data-input="name"]');
+    const feedbackPhone = document.querySelector('[data-input="phone"]');
+    const feedbackInputs = [feedbackName, feedbackPhone];
+    const feedbackSubmit = document.querySelector('[data-input="submit"]');
+
+    const changeHandler = (element) => () => {
+      localStorage.setItem(element.name, element.value);
+    };
+
+    const attachEvents = () => {
+      for (let i = 0; i < feedbackInputs.length; i++) {
+        feedbackInputs[i].addEventListener('change', changeHandler(feedbackInputs[i]));
+      }
+    };
+
+    const checkStorage = () => {
+      for (let i = 0; i < feedbackInputs.length; i++) {
+        feedbackInputs[i].value = localStorage.getItem(feedbackInputs[i].name);
+      }
+
+      attachEvents();
+    };
+
+    checkStorage();
+
+    const clearStorage = () => {
+      localStorage.clear();
+    };
+
+    for (let i = 0; i < feedbackSubmit.length; i++) {
+      feedbackSubmit[i].addEventListener('click', clearStorage);
+    }
+  }
+
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
