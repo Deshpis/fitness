@@ -45,23 +45,15 @@
   }
 }
 
-.footer__main-link {
-  font-family: $ff-bebas-neue;
-  font-size: 26px;
-  line-height: 26px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-
+.footer__logo {
   @include vp-1199 {
-    font-size: 24px;
-    line-height: 24px;
+    position: relative;
+    top: 4px;
   }
 
   @include vp-767 {
     position: absolute;
-    margin-bottom: 20px;
-    font-size: 20px;
-    line-height: 20px;
+    top: auto;
     z-index: 2;
   }
 }
@@ -87,6 +79,7 @@
     left: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
     column-gap: 30px;
     row-gap: 20px;
 

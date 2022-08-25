@@ -69,6 +69,12 @@
   }
 }
 
+.contacts__row {
+  &:not(:last-of-type) {
+    margin-bottom: 21px;
+  }
+}
+
 .contacts span {
   display: block;
   font-weight: 700;
@@ -88,10 +94,6 @@
   display: block;
   font-size: 14px;
   line-height: 21px;
-
-  &:not(:last-of-type) {
-    margin-bottom: 21px;
-  }
 
   @include vp-1199 {
     font-size: 18px;

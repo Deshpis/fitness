@@ -1302,14 +1302,6 @@ button.swiper-pagination-bullet {
 @font-face {
   font-style: normal;
   font-weight: 400;
-  font-family: "Rouble";
-  font-display: swap;
-  src: local("Rouble"), url("../fonts/rouble.woff2") format("woff2"), url("../fonts/rouble.woff") format("woff");
-}
-
-@font-face {
-  font-style: normal;
-  font-weight: 400;
   font-family: "Bebas Neue";
   font-display: swap;
   src: local("Bebas Neue"), url("../fonts/bebas-neue-400.woff2") format("woff2"), url("../fonts/bebas-neue-400.woff") format("woff");
@@ -1516,14 +1508,6 @@ button,
   flex-grow: 1;
 }
 
-.rouble {
-  font-family: "Rouble", "Arial", sans-serif;
-  /* stylelint-disable */
-  text-transform: lowercase !important;
-  font-weight: 400 !important;
-  /* stylelint-enable */
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1568,6 +1552,21 @@ button,
   max-width: 1920px;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+.logo {
+  width: 89px;
+  height: 20px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.logo[href] {
+  cursor: pointer;
+}
+
+.logo__img {
+  display: block;
 }
 
 .btn {
@@ -1887,8 +1886,8 @@ button,
 
 .gym__video {
   position: absolute;
-  bottom: 120px;
-  left: 535px;
+  top: 408px;
+  right: 285px;
   width: 364px;
   height: 228px;
 }
@@ -1912,6 +1911,10 @@ button,
   display: none;
 }
 
+.video--nojs .video__button {
+  pointer-events: none;
+}
+
 .video__media {
   position: absolute;
   top: 0;
@@ -1919,8 +1922,6 @@ button,
   width: 100%;
   height: 100%;
   border: none;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 
 .video__button {
@@ -2097,7 +2098,7 @@ a.tabs__trigger--active::after {
 }
 
 .abonnement-card__quantity {
-  margin-bottom: 57px;
+  margin-bottom: 64px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -2134,11 +2135,9 @@ a.tabs__trigger--active::after {
   z-index: -1;
 }
 
-.abonnement-card__font-rouble {
-  font-family: "Rouble", "Arial", sans-serif;
-  font-weight: 600;
-  color: #102654;
-  text-shadow: none;
+.abonnement-card__rouble {
+  width: 30px;
+  height: 42px;
 }
 
 .abonnement-card__btn {
@@ -2923,8 +2922,26 @@ a.tabs__trigger--active::after {
   -ms-grid-row: 2;
   grid-row: 2;
   margin: 0;
+  height: 88px;
   font-size: 16px;
   line-height: 22px;
+  overflow: auto;
+}
+
+.review blockquote::-webkit-scrollbar {
+  width: 2px;
+  background-color: rgba(232, 232, 232, 0.5);
+  border-radius: 2px;
+}
+
+.review blockquote::-webkit-scrollbar-button,
+.review blockquote::-webkit-scrollbar-track {
+  display: none;
+}
+
+.review blockquote::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 2px;
 }
 
 .feedback {
@@ -3112,6 +3129,10 @@ a.tabs__trigger--active::after {
   left: 51%;
 }
 
+.contacts__row:not(:last-of-type) {
+  margin-bottom: 21px;
+}
+
 .contacts span {
   display: block;
   font-weight: 700;
@@ -3125,11 +3146,6 @@ a.tabs__trigger--active::after {
   display: block;
   font-size: 14px;
   line-height: 21px;
-}
-
-.contacts p:not(:last-of-type),
-.contacts a:not(:last-of-type) {
-  margin-bottom: 21px;
 }
 
 .contacts a {
@@ -3177,14 +3193,6 @@ a.tabs__trigger--active::after {
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
-}
-
-.footer__main-link {
-  font-family: "Bebas Neue", "Arial", sans-serif;
-  font-size: 26px;
-  line-height: 26px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
 .footer__nav {
@@ -3313,7 +3321,7 @@ a.tabs__trigger--active::after {
   }
 
   .gym__video {
-    left: 457px;
+    right: 379px;
   }
 
   .abonnements__wrapper {
@@ -3380,6 +3388,11 @@ a.tabs__trigger--active::after {
 }
 
 @media (max-width: 1199px) {
+  .logo {
+    width: 82px;
+    height: 17px;
+  }
+
   .header__wrapper {
     padding: 39px 45px;
     padding-bottom: 43px;
@@ -3491,6 +3504,7 @@ a.tabs__trigger--active::after {
     min-height: 167px;
     height: auto;
     aspect-ratio: 1 / 0.6;
+    top: auto;
     bottom: 99px;
     left: 50%;
     -webkit-transform: translate(-50%);
@@ -3896,9 +3910,9 @@ a.tabs__trigger--active::after {
     padding-bottom: 36px;
   }
 
-  .footer__main-link {
-    font-size: 24px;
-    line-height: 24px;
+  .footer__logo {
+    position: relative;
+    top: 4px;
   }
 
   .footer__nav {
@@ -3937,6 +3951,11 @@ a.tabs__trigger--active::after {
 @media (max-width: 767px) {
   .container {
     padding: 0 16px;
+  }
+
+  .logo {
+    width: 68px;
+    height: 15px;
   }
 
   .header__wrapper {
@@ -4100,7 +4119,7 @@ a.tabs__trigger--active::after {
   }
 
   .abonnement-card__quantity {
-    margin-bottom: 46px;
+    margin-bottom: 52px;
   }
 
   .abonnement-card__price::before {
@@ -4111,8 +4130,14 @@ a.tabs__trigger--active::after {
 
   .abonnement-card__price {
     margin-bottom: 32px;
+    left: 1px;
     font-size: 48px;
     line-height: 72px;
+  }
+
+  .abonnement-card__rouble {
+    width: 24px;
+    height: 33px;
   }
 
   .promo {
@@ -4394,6 +4419,7 @@ a.tabs__trigger--active::after {
   }
 
   .review blockquote {
+    height: 176px;
     grid-column: 1 / -1;
     text-align: center;
   }
@@ -4462,11 +4488,9 @@ a.tabs__trigger--active::after {
     flex-direction: column;
   }
 
-  .footer__main-link {
+  .footer__logo {
     position: absolute;
-    margin-bottom: 20px;
-    font-size: 20px;
-    line-height: 20px;
+    top: auto;
     z-index: 2;
   }
 
@@ -4478,6 +4502,7 @@ a.tabs__trigger--active::after {
     display: grid;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
     -webkit-column-gap: 30px;
     -moz-column-gap: 30px;
     column-gap: 30px;

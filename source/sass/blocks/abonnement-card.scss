@@ -59,13 +59,13 @@
 }
 
 .abonnement-card__quantity {
-  margin-bottom: 57px;
+  margin-bottom: 64px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 
   @include vp-767 {
-    margin-bottom: 46px;
+    margin-bottom: 52px;
   }
 }
 
@@ -103,16 +103,20 @@
 
   @include vp-767 {
     margin-bottom: 32px;
+    left: 1px;
     font-size: 48px;
     line-height: 72px;
   }
 }
 
-.abonnement-card__font-rouble {
-  font-family: $ff-rouble;
-  font-weight: 600;
-  color: $color-sapphire;
-  text-shadow: none;
+.abonnement-card__rouble {
+  width: 30px;
+  height: 42px;
+
+  @include vp-767 {
+    width: 24px;
+    height: 33px;
+  }
 }
 
 .abonnement-card__btn {

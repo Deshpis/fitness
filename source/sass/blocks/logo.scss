@@ -1,0 +1,25 @@
+
+.logo {
+  // display: block;
+  width: 89px;
+  height: 20px;
+  flex-shrink: 0;
+
+  @include vp-1199 {
+    width: 82px;
+    height: 17px;
+  }
+
+  @include vp-767 {
+    width: 68px;
+    height: 15px;
+  }
+}
+
+.logo[href] {
+  cursor: pointer;
+}
+
+.logo__img {
+  display: block;
+}

@@ -130,14 +130,13 @@
 
 .gym__video {
   position: absolute;
-  bottom: 120px;
-  left: 535px;
-
+  top: 408px;
+  right: 285px;
   width: 364px;
   height: 228px;
 
   @media (min-width: $vp-1366) {
-    left: 457px;
+    right: 379px;
   }
 
   @include vp-1199 {
@@ -145,6 +144,7 @@
     min-height: 167px;
     height: auto;
     aspect-ratio: 1 / 0.6;
+    top: auto;
     bottom: 99px;
     left: 50%;
     transform: translate(-50%);

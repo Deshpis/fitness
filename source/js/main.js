@@ -19,6 +19,10 @@ window.addEventListener('DOMContentLoaded', () => {
     let videos = document.querySelectorAll('.video');
 
     for (let i = 0; i < videos.length; i++) {
+      videos[i].classList.remove('video--nojs');
+    }
+
+    for (let i = 0; i < videos.length; i++) {
       setupVideo(videos[i]);
     }
   }
